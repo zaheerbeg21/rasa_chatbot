@@ -1,0 +1,54 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - add_data
+entities:
+  - number
+  - email_id
+  
+slots:
+  name:
+    type: unfeatureized
+  phone_number:
+    type: unfeatureized
+  email_id:
+    type: unfeatureized
+  occupation:
+    type: unfeatureized
+    
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_ask_name:
+    - text: "May i know your name please?"
+
+  utter_ask_phone_number:
+    - text: "Do you mind if I ask what you do for a living?"
+
+  utter_ask_email_id:
+    - text: "May i know your phone number please?"
+
+  utter_ask_occupation:
+    - text: "Is it okay if I ask what you do for a living?"
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_name
+  - utter_ask_phone_number
+  - utter_ask_email_id
+  - utter_ask_occupation
+forms:
+  - Form_Info
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
